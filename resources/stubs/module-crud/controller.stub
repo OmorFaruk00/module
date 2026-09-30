@@ -1,0 +1,75 @@
+<?php
+
+namespace {{ namespace }}\App\Http\Controllers;
+
+use App\Services\ResponseService;
+use Illuminate\Http\JsonResponse;
+use {{ namespace }}\App\Http\Requests\Store{{ module }}Request;
+use {{ namespace }}\App\Http\Requests\Update{{ module }}Request;
+use {{ namespace }}\App\Http\Resources\{{ module }}Resource;
+use {{ namespace }}\App\Services\{{ module }}Service;
+
+class {{ module }}Controller
+{
+    public function __construct(
+        protected {{ module }}Service $service
+    ) {}
+
+    public function index()
+    {
+        $data = $this->service->index();
+
+        return ResponseService::success(
+            {{ module }}Resource::collection($data),
+            '{{ module }} list retrieved successfully.'
+        );
+    }
+
+    public function store(Store{{ module }}Request $request)
+    {
+        $data = $this->service->store(
+            $request->validated()
+        );
+
+        return ResponseService::success(
+            new {{ module }}Resource($data),
+            '{{ module }} created successfully.',
+            201
+        );
+    }
+
+    public function show(int $id)
+    {
+        $data = $this->service->show($id);
+
+        return ResponseService::success(
+            new {{ module }}Resource($data),
+            '{{ module }} retrieved successfully.'
+        );
+    }
+
+    public function update(
+        Update{{ module }}Request $request,
+        int $id
+    ) {
+        $data = $this->service->update(
+            $id,
+            $request->validated()
+        );
+
+        return ResponseService::success(
+            new {{ module }}Resource($data),
+            '{{ module }} updated successfully.'
+        );
+    }
+
+    public function destroy(int $id)
+    {
+        $this->service->destroy($id);
+
+        return ResponseService::success(
+            null,
+            '{{ module }} deleted successfully.'
+        );
+    }
+}

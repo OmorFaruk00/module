@@ -1,0 +1,35 @@
+<?php
+
+namespace {{ namespace }}\Tests\Unit;
+
+use Tests\TestCase;
+use Mockery;
+use {{ namespace }}\App\Services\{{ module }}Service;
+use {{ namespace }}\App\Repositories\Contracts\{{ module }}RepositoryInterface;
+
+class {{ module }}ServiceTest extends TestCase
+{
+    public function test_can_create_{{ module_lower }}(): void
+    {
+        $repository = Mockery::mock(
+            {{ module }}RepositoryInterface::class
+        );
+
+        $data = [
+            {{ factory_fields }}
+        ];
+
+        $repository
+            ->shouldReceive('create')
+            ->once()
+            ->with($data);
+
+        $service = new {{ module }}Service(
+            $repository
+        );
+
+        $service->store($data);
+
+        $this->assertTrue(true);
+    }
+}

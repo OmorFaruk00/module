@@ -1,0 +1,9 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+use {{ namespace }}\App\Http\Controllers\{{ module }}Controller;
+
+Route::apiResource(
+    '{{ route_prefix }}',
+    {{ module }}Controller::class
+);
