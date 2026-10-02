@@ -15,10 +15,11 @@ class UpdateStudentRequest extends FormRequest
     {
         return [
             'name' => 'sometimes|string|max:255',
-        'email' => 'sometimes|email',
+        'email' => 'sometimes|email|max:255',
         'phone' => 'sometimes|string|max:255',
         'department_id' => 'sometimes|integer',
         'is_active' => 'sometimes|boolean',
+        'age' => 'nullable|integer',
         ];
     }
 }

@@ -1,0 +1,34 @@
+[
+    {
+        "name": "name",
+        "type": "string",
+        "modifiers": []
+    },
+    {
+        "name": "email",
+        "type": "email",
+        "modifiers": []
+    },
+    {
+        "name": "phone",
+        "type": "string",
+        "modifiers": []
+    },
+    {
+        "name": "department_id",
+        "type": "integer",
+        "modifiers": []
+    },
+    {
+        "name": "is_active",
+        "type": "boolean",
+        "modifiers": []
+    },
+    {
+        "name": "age",
+        "type": "integer",
+        "modifiers": [
+            "nullable"
+        ]
+    }
+]

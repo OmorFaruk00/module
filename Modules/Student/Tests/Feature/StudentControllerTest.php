@@ -15,11 +15,11 @@ class StudentControllerTest extends TestCase
         $response = $this->postJson(
             '/api/students',
             [
-                'name' => \App\Models\User::factory()->make()->name,
-            'email' => \App\Models\User::factory()->make()->name,
-            'phone' => \App\Models\User::factory()->make()->name,
-            'department_id' => \App\Models\User::factory()->make()->name,
-            'is_active' => \App\Models\User::factory()->make()->name
+                'name' => fake()->name(),
+            'email' => fake()->safeEmail(),
+            'phone' => fake()->phoneNumber(),
+            'department_id' => fake()->numberBetween(1, 100),
+            'is_active' => fake()->boolean()
             ]
         );
 

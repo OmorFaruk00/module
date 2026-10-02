@@ -2,8 +2,8 @@
 
 namespace Modules\Student\App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
 class Student extends Model
 {
@@ -16,7 +16,8 @@ class Student extends Model
         'email',
         'phone',
         'department_id',
-        'is_active'
+        'is_active',
+        'age',
     ];
 
     protected static function newFactory()

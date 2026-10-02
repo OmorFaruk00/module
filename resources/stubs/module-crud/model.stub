@@ -2,8 +2,8 @@
 
 namespace {{ namespace }}\App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
 class {{ module }} extends Model
 {
@@ -12,7 +12,7 @@ class {{ module }} extends Model
     protected $table = '{{ table }}';
 
     protected $fillable = [
-        {{ fillable }}
+        {{ fillable }},
     ];
 
     protected static function newFactory()

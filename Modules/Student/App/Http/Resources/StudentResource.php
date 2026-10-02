@@ -17,6 +17,7 @@ class StudentResource extends JsonResource
             'phone' => $this->phone,
             'department_id' => $this->department_id,
             'is_active' => $this->is_active,
+            'age' => $this->age,
 
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,

@@ -12,7 +12,12 @@ class StudentFactory extends Factory
     public function definition(): array
     {
         return [
-            {{ factory_definition }}
+            'name' => fake()->name(),
+            'email' => fake()->safeEmail(),
+            'phone' => fake()->phoneNumber(),
+            'department_id' => fake()->numberBetween(1, 100),
+            'is_active' => fake()->boolean(),
+            'age' => fake()->numberBetween(1, 100),
         ];
     }
 }

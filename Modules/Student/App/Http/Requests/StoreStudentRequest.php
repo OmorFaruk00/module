@@ -15,10 +15,11 @@ class StoreStudentRequest extends FormRequest
     {
         return [
             'name' => 'required|string|max:255',
-        'email' => 'required|email',
+        'email' => 'required|email|max:255',
         'phone' => 'required|string|max:255',
         'department_id' => 'required|integer',
         'is_active' => 'required|boolean',
+        'age' => 'nullable|integer',
         ];
     }
 }
